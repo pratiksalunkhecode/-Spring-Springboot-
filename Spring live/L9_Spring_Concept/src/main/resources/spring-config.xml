@@ -1,0 +1,49 @@
+<!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+<!--       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--       xsi:schemaLocation="http://www.springframework.org/schema/beans-->
+<!--	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">-->
+
+<!--    <bean id="Gretting" name="Gretting" class="com.gfg.JBDL65.Spring.Introduction">-->
+
+<!--    </bean>-->
+
+<!--</beans>-->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- Define the 'greeting' bean -->
+ <!-- id id unique indentifier in one xml file -->
+<bean id="Gretting" class="com.gfg.JBDL65.Spring.Introduction.Gretting" init-method="init">
+    <!-- You can define properties or constructor arguments here -->
+    <property name="message" value="hello world form properties xml"> </property>
+    <!-- this is known as setter base property injection -->
+</bean>
+
+<!--    <bean id="Gretting2" name="Gretting2" class="com.gfg.JBDL65.Spring.Introduction.Gretting">-->
+<!--        &lt;!&ndash; You can define properties or constructor arguments here &ndash;&gt;-->
+<!--        <property name="message" value="hello world 2 form properties xml"> </property>-->
+<!--        &lt;!&ndash; this is known as setter base property injection &ndash;&gt;-->
+<!--    </bean>-->
+
+   <!-- *************************** Constructor base injection ********************************* -->
+
+    <bean id="Gretting2" name="Gretting2" class="com.gfg.JBDL65.Spring.Introduction.Gretting" scope="prototype">
+        <!-- You can define properties or constructor arguments here -->
+        <constructor-arg type="java.lang.String" value="Hey hi im from constructor injection"> </constructor-arg>
+        <!-- this is known as constructor base  injection -->
+    </bean>
+
+    <bean id="Gretting3" name="Gretting3" class="com.gfg.JBDL65.Spring.Introduction.Gretting">
+        <constructor-arg type="int" value="100"> </constructor-arg>
+    </bean>
+
+</beans>
+
+<!-- flow
+   1. we have created xml for hold all the beans
+   2. create gretting for a message inside the gretting class get, set and display method
+   3. create the main method and define the context created object for Gretting class, setter and display method -->
+

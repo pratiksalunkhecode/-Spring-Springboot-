@@ -1,0 +1,31 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<bean id="addressSetter" class="com.gfg.JBDL65.Spring.Introduction.Address">
+    <property name="city" value="city1"> </property>
+    <property name="country" value="country1"> </property>
+</bean>
+
+    <bean id="addressConstr" class="com.gfg.JBDL65.Spring.Introduction.Address">
+        <constructor-arg index="0" value="city1"> </constructor-arg>
+        <constructor-arg index="1" value="country1"> </constructor-arg>
+    </bean>
+
+
+    <bean id="employeSetter" class="com.gfg.JBDL65.Spring.Introduction.Employee">
+        <property name="id" value="1"> </property>
+        <property name="name" value="Pratik s"> </property>
+        <property name="address" ref="addressSetter"> </property>
+    </bean>
+
+    <bean id="employeecons"  class="com.gfg.JBDL65.Spring.Introduction.Employee">
+        <constructor-arg index="0" value="2"> </constructor-arg>
+        <constructor-arg index="1" value="Pratik 2"> </constructor-arg>
+        <constructor-arg index="2" ref="addressConstr"> </constructor-arg>
+    </bean>
+
+
+</beans>

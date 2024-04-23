@@ -1,0 +1,35 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+    <bean id="collDI" name="collDI" class="com.geeksforgeeks_JBDL65.l10_spring_concepts2.DICollections">
+
+    <property  name="nameList">
+        <list>
+            <value>Pratik</value>
+            <value>Aditya</value>
+            <value>boss </value>
+        </list>
+    </property>
+
+        <property name="countrySet">
+            <set>
+                <value>India</value>
+                <value>US</value>
+                <value>Canada</value>
+                <value>Japan</value>
+            </set>
+        </property>
+
+        <property name="addressMap">
+            <map>
+                <entry key="1" value="1,Pune"> </entry>
+                <entry key="2" value="1,Mumbai"> </entry>
+                <entry key="3" value="1,Pune2"> </entry>
+                <entry key="4" value="1,Pune2"> </entry>
+            </map>
+        </property>
+    </bean>
+</beans>
